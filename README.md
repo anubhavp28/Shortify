@@ -7,8 +7,8 @@ Under the hood, shortify utlises Redis to create a large map, mapping keys to UR
 ## Getting Started
 ### Prerequisites
   * Python 3 & Pip ( you probably should create a virtual environment )
-  * Redis
-  * PostgreSQL
+  * Redis (<a href="https://redis.io/topics/quickstart">Installation Instructions</a>)
+  * PostgreSQL (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04">Installation Instructions</a>)
   
 ### Installation
   1. __Local Installation__
@@ -40,10 +40,15 @@ Under the hood, shortify utlises Redis to create a large map, mapping keys to UR
     ```
     docker build ./ -t shortify
     ```
+  * Open `config.sh` and provide your Redis & PostgreSQL config.
+  * Shortify utilises env variables to get configuration details. Run the following command to set env variables.
+    ```
+    source config.sh
+    ```
   * Run the image in a new container 
     ```
     docker run -p 8080:80 --env-file env.list shortify
     ```
-  The service should be live at `localhost:8080`.
+  * The service should be live at `localhost:8080`.
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
