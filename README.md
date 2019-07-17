@@ -1,4 +1,4 @@
-# shortify
+# Shortify
 A URL shortening microservice built on top of Flask, Redis and Postgresql. Like existing URL shortening services, shortify associates a 8 character key to every long url. This key is employed to create a short "beautiful" URL of the form `<shortify_host>/go/<key>`, which redirects to the original URL. 
 
 Under the hood, shortify utlises Redis to create a large map, mapping keys to URLs. PostgreSQL provides a persistant store from which the mapping table can be rebuilt after a failure. 
